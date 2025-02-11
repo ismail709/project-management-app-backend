@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('task_types', function (Blueprint $table) {
             $table->id();
             $table->string('task_type_name');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

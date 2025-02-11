@@ -17,6 +17,7 @@ return new class extends Migration
             $table->foreignIdFor(Task::class)->constrained()->cascadeOnDelete();
             $table->string('attachment_path');
             $table->foreignId('uploaded_by')->nullable()->constrained('users')->nullOnDelete();
+            $table->softDeletes();
             $table->timestamps();
         });
     }

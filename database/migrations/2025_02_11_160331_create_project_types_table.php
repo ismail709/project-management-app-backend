@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('project_types', function (Blueprint $table) {
             $table->id();
             $table->string('project_type_name');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

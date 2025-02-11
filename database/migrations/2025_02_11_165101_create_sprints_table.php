@@ -19,6 +19,7 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->enum('sprint_status', ['planned', 'active', 'completed'])->default('planned');
+            $table->softDeletes();
             $table->timestamps();
         });
     }

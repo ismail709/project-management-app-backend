@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('task_title');
             $table->text('task_description')->nullable();
             $table->foreignIdFor(TaskType::class)->nullable()->constrained()->nullOnDelete();
-            $table->enum('task_priority',['low','regular','high','critical'])->default('medium');
+            $table->enum('task_priority',['low','regular','high','critical'])->default('regular');
             $table->enum('task_status',['todo','in_progress','done'])->default('todo');
             $table->integer('estimated_days')->nullable();
             $table->integer('actual_days')->nullable();
