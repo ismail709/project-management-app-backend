@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('parent_task_id')->nullable()->constrained('tasks')->nullOnDelete();
             $table->foreignIdFor(Sprint::class)->nullable()->constrained()->nullOnDelete();
-            $table->foreignIdFor(Project::class)->constrained()->nullOnDelete();
+            $table->foreignIdFor(Project::class)->constrained()->cascadeOnDelete();
             $table->string('task_title');
             $table->text('task_description')->nullable();
             $table->foreignIdFor(TaskType::class)->nullable()->constrained()->nullOnDelete();
